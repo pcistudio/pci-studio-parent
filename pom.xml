@@ -213,7 +213,7 @@
                     <scmDevelopmentCommitComment>[skip ci] - Prepare for next development iteration
                     </scmDevelopmentCommitComment>
                     <scmReleaseCommitComment>[skip ci] - Prepare release @{releaseLabel}</scmReleaseCommitComment>
-                    <tagNameFormat>v${project.version}</tagNameFormat>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
                 </configuration>
             </plugin>
         </plugins>
