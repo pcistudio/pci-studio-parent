@@ -24,13 +24,6 @@
         </license>
     </licenses>
 
-    <scm>
-        <url>https://github.com/pcistudio/pci-studio-parent.git</url>
-        <connection>scm:git:git://github.com:pcistudio/pci-studio-parent.git</connection>
-        <developerConnection>scm:git:git@github.com:pcistudio/pci-studio-parent.git</developerConnection>
-        <tag>HEAD</tag>
-    </scm>
-
     <developers>
         <developer>
             <name>Junior Martori</name>
