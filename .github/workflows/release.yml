@@ -33,7 +33,7 @@ jobs:
         shell: bash
         run: |
           ./mvnw release:clean release:prepare -Darguments="-DskipTests -Dpmd.skip=true -Dspotbugs.skip=true" -B  -X
-          version=$(./mvnw help:evaluate -Dexpression=project.version -q -DforceStdout)
+          version=$(grep "scm.tag=" release.properties | sed 's/scm.tag=//')
           echo "version=$version" | tee "$GITHUB_OUTPUT"
       - name: Perform Release Deployment to Maven Central
         run: ./mvnw release:perform -Darguments="-DskipTests -Dpmd.skip=true -Dspotbugs.skip=true" -B -Prelease
