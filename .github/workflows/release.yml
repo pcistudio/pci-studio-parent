@@ -29,11 +29,20 @@ jobs:
           git config --global user.name "release-bot"
           git config --global user.email "pcistudio360@gmail.com"
       - name: Create New Release
+        id: create_release
         shell: bash
-        run: ./mvnw release:clean release:prepare -Darguments="-DskipTests -Dpmd.skip=true -Dspotbugs.skip=true" -B  -X
+        run: |
+          ./mvnw release:clean release:prepare -Darguments="-DskipTests -Dpmd.skip=true -Dspotbugs.skip=true" -B  -X
+          version=$(./mvnw help:evaluate -Dexpression=project.version -q -DforceStdout)
+          echo "version=$version" | tee "$GITHUB_OUTPUT"
       - name: Perform Release Deployment to Maven Central
         run: ./mvnw release:perform -Darguments="-DskipTests -Dpmd.skip=true -Dspotbugs.skip=true" -B -Prelease
         env:
           MAVEN_CENTRAL_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
           MAVEN_CENTRAL_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+      - name: Release from Tag
+        run: gh release create ${{ env.VERSION }} -t "Release ${{ env.VERSION }}" -n "Release ${{ env.VERSION }}" --latest
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ steps.create_release.outputs.version }}
