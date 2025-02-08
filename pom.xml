@@ -28,7 +28,7 @@
     <scm>
         <url>https://github.com/pcistudio/pci-studio-parent.git</url>
         <connection>scm:git:git://github.com:pcistudio/pci-studio-parent.git</connection>
-        <developerConnection>scm:git:git@github.com:pcistudio/pci-studio-parent.gitt</developerConnection>
+        <developerConnection>scm:git:git@github.com:pcistudio/pci-studio-parent.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
