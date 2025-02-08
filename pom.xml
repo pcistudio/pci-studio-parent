@@ -28,8 +28,8 @@
 
     <scm>
         <url>https://github.com/pcistudio/pci-studio-parent.git</url>
-        <connection>scm:git:git://github.com:pcistudio/pci-studio-parent.gitt</connection>
-        <developerConnection>scm:git:git@github.com:pcistudio/pci-studio-parent.gitt</developerConnection>
+        <connection>scm:git:git://github.com:pcistudio/pci-studio-parent.git</connection>
+        <developerConnection>scm:git:git@github.com:pcistudio/pci-studio-parent.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
