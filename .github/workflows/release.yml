@@ -10,6 +10,18 @@ jobs:
   deploy-mvn-central:
     runs-on: ubuntu-latest
     steps:
+      - name: Check SSH Key Generation
+        uses: pcistudio/actions/ssh-gen@v1
+        with:
+          ssh-key-name: 'SSH_PRIVATE_KEY'
+          user-email: ${{ vars.RELEASE_EMAIL }}
+          token: ${{ secrets.GIT_ADMIN_PAT }}
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
       - uses: actions/checkout@v4
         with:
           persist-credentials: true
@@ -26,8 +38,8 @@ jobs:
           cache: maven
       - name: Set Git Author
         run: |
-          git config --global user.name "release-bot"
-          git config --global user.email "pcistudio360@gmail.com"
+          git config --global user.name "${{ vars.RELEASE_USER }}"
+          git config --global user.email "${{ vars.RELEASE_EMAIL }}"
       - name: Create New Release
         id: create_release
         shell: bash
