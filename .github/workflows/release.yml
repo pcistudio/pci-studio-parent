@@ -10,49 +10,16 @@ jobs:
   deploy-mvn-central:
     runs-on: ubuntu-latest
     steps:
-      - name: Check SSH Key Generation
-        uses: pcistudio/actions/ssh-gen@v1
+      - name: Release to Maven Central and to GitHub
+        uses: pcistudio/actions/release@14-add-release-action
         with:
-          ssh-key-name: 'SSH_PRIVATE_KEY_TEMP'
-          user-email: ${{ vars.RELEASE_EMAIL }}
-          token: ${{ secrets.GIT_ADMIN_PAT }}
-      - name: Set up SSH
-        uses: pcistudio/actions/ssh-setup@v1
-        with:
-          ssh-key: "${{ secrets.SSH_PRIVATE_KEY_TEMP }}"
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: true
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-          server-id: ossrh
-          server-username: MAVEN_CENTRAL_USERNAME
-          server-password: MAVEN_CENTRAL_PASSWORD
-          gpg-passphrase: MAVEN_GPG_PASSPHRASE
-          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
-          cache: maven
-      - name: Set Git Author
-        run: |
-          git config --global user.name "${{ vars.RELEASE_USER }}"
-          git config --global user.email "${{ vars.RELEASE_EMAIL }}"
-      - name: Create New Release
-        id: create_release
-        shell: bash
-        run: |
-          ./mvnw release:clean release:prepare -Darguments="-DskipTests -Dpmd.skip=true -Dspotbugs.skip=true" -B  -X
-          version=$(grep "scm.tag=" release.properties | sed 's/scm.tag=//')
-          echo "version=$version" | tee "$GITHUB_OUTPUT"
-      - name: Perform Release Deployment to Maven Central
-        run: ./mvnw release:perform -Darguments="-DskipTests -Dpmd.skip=true -Dspotbugs.skip=true" -B -Prelease
-        env:
-          MAVEN_CENTRAL_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
-          MAVEN_CENTRAL_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
-          MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-      - name: Release from Tag
-        run: gh release create ${{ env.VERSION }} -t "Release ${{ env.VERSION }}" -n "Release ${{ env.VERSION }}" --latest
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VERSION: ${{ steps.create_release.outputs.version }}
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY_RELEASE }}
+          ssh-key-name: "SSH_PRIVATE_KEY_RELEASE"
+          user-email: "${{ vars.RELEASE_EMAIL }}"
+          user-name: "${{ vars.RELEASE_USER }}"
+          token: "${{ secrets.GIT_ADMIN_PAT }}"
+          maven-central-username: "${{ secrets.MAVEN_CENTRAL_USERNAME }}"
+          maven-central-password: "${{ secrets.MAVEN_CENTRAL_PASSWORD }}"
+          gpg-passphrase: "${{ secrets.GPG_PASSPHRASE }}"
+          gpg-private-key: "${{ secrets.GPG_PRIVATE_KEY }}"
+          gh-token: "${{ secrets.GITHUB_TOKEN }}"
