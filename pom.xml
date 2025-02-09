@@ -9,7 +9,7 @@
 
     <groupId>com.pcistudio</groupId>
     <artifactId>pci-studio-dependencies</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.4-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>PCI Studio Dependencies</name>
     <description>
