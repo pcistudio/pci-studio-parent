@@ -9,7 +9,7 @@
 
     <groupId>com.pcistudio</groupId>
     <artifactId>pci-studio-dependencies</artifactId>
-    <version>1.0.5-SNAPSHOT</version>
+    <version>1.0.5</version>
     <packaging>pom</packaging>
     <name>PCI Studio Dependencies</name>
     <description>
@@ -29,7 +29,7 @@
         <url>https://github.com/pcistudio/pci-studio-parent.git</url>
         <connection>scm:git:git://github.com:pcistudio/pci-studio-parent.git</connection>
         <developerConnection>scm:git:git@github.com:pcistudio/pci-studio-parent.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>v1.0.5</tag>
     </scm>
 
     <developers>
