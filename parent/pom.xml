@@ -3,11 +3,11 @@
     <parent>
         <groupId>com.pcistudio</groupId>
         <artifactId>pci-studio-dependencies</artifactId>
-        <version>1.0.2</version>
+        <version>1.0.3-SNAPSHOT</version>
     </parent>
 
     <artifactId>pci-studio-parent</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>PCI Studio Parent</name>
     <description>
@@ -83,7 +83,7 @@
                     <dependency>
                         <groupId>com.pcistudio</groupId>
                         <artifactId>codequality</artifactId>
-                        <version>1.0.2</version>
+                        <version>1.0.3-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
             </plugin>
