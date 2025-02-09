@@ -1,4 +1,4 @@
-# pci-studio-parent
+# PCI studio maven parent [![Creating Release and Deploying to Maven Central](https://github.com/pcistudio/pci-studio-parent/actions/workflows/release.yml/badge.svg)](https://github.com/pcistudio/pci-studio-parent/actions/workflows/release.yml)
 
 This project contain a parent pom for all the projects in the pci-studio organization.
 
