@@ -49,13 +49,13 @@
         <gson.version>2.12.1</gson.version>
         <shedlock-spring.version>5.16.0</shedlock-spring.version>
         <task-processor.version>0.0.38</task-processor.version>
-        <spotbugs-annotations.version>4.9.0</spotbugs-annotations.version>
+        <spotbugs-annotations.version>4.9.1</spotbugs-annotations.version>
 
         <maven-release-plugin.version>3.1.1</maven-release-plugin.version>
         <maven-pmd-plugin.version>3.26.0</maven-pmd-plugin.version>
         <maven-checkstyle-plugin.version>3.6.0</maven-checkstyle-plugin.version>
         <spotbugs-maven-plugin.version>4.8.6.6</spotbugs-maven-plugin.version>
-        <antora-maven-plugin.version>1.0.0-alpha.4</antora-maven-plugin.version>
+        <antora-maven-plugin.version>1.0.0-alpha.5</antora-maven-plugin.version>
         <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
         <maven-gpg-plugin.version>3.2.7</maven-gpg-plugin.version>
     </properties>
@@ -70,6 +70,7 @@
             <groupId>com.github.spotbugs</groupId>
             <artifactId>spotbugs-annotations</artifactId>
             <version>${spotbugs-annotations.version}</version>
+            <optional>true</optional>
         </dependency>
         <!--junit 5-->
         <dependency>
