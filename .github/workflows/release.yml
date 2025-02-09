@@ -13,15 +13,13 @@ jobs:
       - name: Check SSH Key Generation
         uses: pcistudio/actions/ssh-gen@v1
         with:
-          ssh-key-name: 'SSH_PRIVATE_KEY'
+          ssh-key-name: 'SSH_PRIVATE_KEY_TEMP'
           user-email: ${{ vars.RELEASE_EMAIL }}
           token: ${{ secrets.GIT_ADMIN_PAT }}
       - name: Set up SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
+        uses: pcistudio/actions/ssh-setup@v1
+        with:
+          ssh-key: "${{ secrets.SSH_PRIVATE_KEY_TEMP }}"
       - uses: actions/checkout@v4
         with:
           persist-credentials: true
