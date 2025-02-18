@@ -7,6 +7,6 @@ In order to use it, add the following to your pom.xml:
 <parent>
     <groupId>com.pcistudio</groupId>
     <artifactId>pci-studio-parent</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.6</version>
 </parent>
 ```
