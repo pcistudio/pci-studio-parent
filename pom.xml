@@ -58,6 +58,10 @@
         <antora-maven-plugin.version>1.0.0-alpha.5</antora-maven-plugin.version>
         <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
         <maven-gpg-plugin.version>3.2.7</maven-gpg-plugin.version>
+
+        <!--Temporally Dependency Fix for Security Issues-->
+        <!--Remove  when spring-boot 3.4.x bump the version -->
+        <json-smart.version>2.5.2</json-smart.version>
     </properties>
 
     <dependencies>
