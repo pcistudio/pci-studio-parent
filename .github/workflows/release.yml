@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Release to Maven Central and to GitHub
-        uses: pcistudio/actions/release@14-add-release-action
+        uses: pcistudio/actions/release@v1.21
         with:
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY_RELEASE }}
           ssh-key-name: "SSH_PRIVATE_KEY_RELEASE"
