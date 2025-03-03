@@ -48,7 +48,7 @@
         <resilience4j.version>2.3.0</resilience4j.version>
         <gson.version>2.12.1</gson.version>
         <shedlock-spring.version>5.16.0</shedlock-spring.version>
-        <task-processor.version>0.0.40</task-processor.version>
+        <task-processor.version>0.0.41</task-processor.version>
         <spotbugs-annotations.version>4.9.1</spotbugs-annotations.version>
 
         <maven-release-plugin.version>3.1.1</maven-release-plugin.version>
