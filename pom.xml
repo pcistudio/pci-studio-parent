@@ -50,7 +50,7 @@
         <shedlock-spring.version>5.16.0</shedlock-spring.version>
         <task-processor.version>0.0.41</task-processor.version>
         <simple-kms.version>0.0.3</simple-kms.version>
-        <spotbugs-annotations.version>4.9.1</spotbugs-annotations.version>
+        <spotbugs-annotations.version>4.9.2</spotbugs-annotations.version>
 
         <maven-release-plugin.version>3.1.1</maven-release-plugin.version>
         <maven-pmd-plugin.version>3.26.0</maven-pmd-plugin.version>
