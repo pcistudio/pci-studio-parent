@@ -3,11 +3,11 @@
     <parent>
         <groupId>com.pcistudio</groupId>
         <artifactId>pci-studio-dependencies</artifactId>
-        <version>1.0.14-SNAPSHOT</version>
+        <version>1.0.14</version>
     </parent>
 
     <artifactId>codequality</artifactId>
-    <version>1.0.14-SNAPSHOT</version>
+    <version>1.0.14</version>
     <packaging>jar</packaging>
     <name>Codequality</name>
     <description>
