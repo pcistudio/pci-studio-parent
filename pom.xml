@@ -49,6 +49,7 @@
         <gson.version>2.12.1</gson.version>
         <shedlock-spring.version>5.16.0</shedlock-spring.version>
         <task-processor.version>0.0.41</task-processor.version>
+        <simple-kms.version>0.0.3</simple-kms.version>
         <spotbugs-annotations.version>4.9.1</spotbugs-annotations.version>
 
         <maven-release-plugin.version>3.1.1</maven-release-plugin.version>
@@ -58,6 +59,7 @@
         <antora-maven-plugin.version>1.0.0-alpha.5</antora-maven-plugin.version>
         <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
         <maven-gpg-plugin.version>3.2.7</maven-gpg-plugin.version>
+
 
         <!--Temporally Dependency Fix for Security Issues-->
         <!--Remove  when spring-boot 3.4.x bump the version -->
@@ -168,6 +170,11 @@
                 <groupId>io.github.resilience4j</groupId>
                 <artifactId>resilience4j-circuitbreaker</artifactId>
                 <version>${resilience4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pcistudio</groupId>
+                <artifactId>simple-kms-spring</artifactId>
+                <version>${simple-kms.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
