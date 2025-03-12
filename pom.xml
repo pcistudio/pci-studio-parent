@@ -55,7 +55,7 @@
         <maven-release-plugin.version>3.1.1</maven-release-plugin.version>
         <maven-pmd-plugin.version>3.26.0</maven-pmd-plugin.version>
         <maven-checkstyle-plugin.version>3.6.0</maven-checkstyle-plugin.version>
-        <spotbugs-maven-plugin.version>4.9.1.0</spotbugs-maven-plugin.version>
+        <spotbugs-maven-plugin.version>4.9.2.0</spotbugs-maven-plugin.version>
         <antora-maven-plugin.version>1.0.0-alpha.5</antora-maven-plugin.version>
         <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
         <maven-gpg-plugin.version>3.2.7</maven-gpg-plugin.version>
