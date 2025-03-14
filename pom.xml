@@ -59,7 +59,9 @@
         <antora-maven-plugin.version>1.0.0-alpha.5</antora-maven-plugin.version>
         <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
         <maven-gpg-plugin.version>3.2.7</maven-gpg-plugin.version>
-
+        <bson.version>5.3.1</bson.version>
+        <avro.version>1.12.0</avro.version>
+        <protobuf.version>4.29.3</protobuf.version>
 
         <!--Temporally Dependency Fix for Security Issues-->
         <!--Remove  when spring-boot 3.4.x bump the version -->
@@ -175,6 +177,21 @@
                 <groupId>com.pcistudio</groupId>
                 <artifactId>simple-kms-spring</artifactId>
                 <version>${simple-kms.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mongodb</groupId>
+                <artifactId>bson</artifactId>
+                <version>${bson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.avro</groupId>
+                <artifactId>avro</artifactId>
+                <version>${avro.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java</artifactId>
+                <version>${protobuf.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
